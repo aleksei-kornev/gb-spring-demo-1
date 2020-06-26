@@ -7,7 +7,9 @@ public class UserApplication {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(UserApplicationConfig.class);
 
         UserService userService = context.getBean("userService", UserService.class);
+        userService.addUser();
         userService.printAllUsers();
+
 
         Box box1 = context.getBean("box", Box.class);
         Box box2 = context.getBean("box", Box.class);
@@ -17,6 +19,9 @@ public class UserApplication {
         box2.color = "White";
         System.out.println(box1);
         System.out.println(box2);
+
+        Can can1 = context.getBean("can", Can.class);
+        System.out.println(can1.toString());
 
         Square square = context.getBean("square", Square.class);
         System.out.println(square.getArea());
