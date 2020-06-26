@@ -1,5 +1,5 @@
 package com.geekbrains.spring.demo;
 
-public class XmlBean {
-    UserService userService;
-}
+//public class XmlBean {
+//    UserService userService;
+//}

@@ -7,13 +7,17 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Component (value = "userService")
 public class UserService {
     private UserRepository userRepository;
 
     @Autowired
     public void setInMemoryUserRepository(@Qualifier(value = "inMemoryUserRepository") UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public void addUser () {
+        userRepository.addUser(new User(3L,"Bill", "bill@gmail.com"));
     }
 
     public void printAllUsers() {
